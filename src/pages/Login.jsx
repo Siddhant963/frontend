@@ -12,10 +12,10 @@ function Login() {
   // Function to verify token and set session values
   const tokenverify = async (token) => {
     try {
-      const response = await axios.post('https://backend-twocups.onrender.com/users/verifytoken', {
-        token : token ,
-        withCredentials: true, // Ensure cookies are sent
-      });
+      const response = await axios.post('https://backend-twocups.onrender.com/users/verifytoken', {}, {
+    headers: { Authorization: `Bearer ${token}` }, 
+    withCredentials: true, 
+});
 
       if (response.data) {
         sessionStorage.setItem('userId', response.data.data.id);
