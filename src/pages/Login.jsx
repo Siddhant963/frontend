@@ -10,9 +10,10 @@ function Login() {
   const navigate = useNavigate();
 
   // Function to verify token and set session values
-  const tokenverify = async () => {
+  const tokenverify = async (token) => {
     try {
       const response = await axios.get('https://backend-twocups.onrender.com/users/verifytoken', {
+        token : token ,
         withCredentials: true, // Ensure cookies are sent
       });
 
@@ -39,12 +40,15 @@ function Login() {
       
       // Set token in cookies
       Cookies.set('token', response.data.token, { expires: 1 });
+      
       if(response.data.isadmin){ 
         navigate('/admin/allorders');
       }
      else{
        // Verify token and set session values
-       await tokenverify();
+      console.log(Cookies.get('token'));
+       const token = cookies.get('token');
+       await tokenverify(token);
 
        // Redirect to home page
        navigate('/');
