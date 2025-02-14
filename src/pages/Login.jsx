@@ -47,7 +47,7 @@ function Login() {
      else{
        // Verify token and set session values
       console.log(Cookies.get('token'));
-       const token = cookies.get('token');
+       const token = Cookies.get('token');
        await tokenverify(token);
 
        // Redirect to home page
