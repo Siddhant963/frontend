@@ -11,7 +11,7 @@ function Catcard(props) {
   return (
     <>
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src={"http://localhost:3000/"+data.imageUrl }alt="" className="w-full h-48 object-cover" />
+        <img src={"https://backend-twocups.onrender.com/"+data.imageUrl }alt="" className="w-full h-48 object-cover" />
         <div className="p-4">
           <h3 className="text-lg font-semibold">{data.name}</h3>
           <p className="text-gray-600 mt-1">{data.description}</p>

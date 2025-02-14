@@ -23,13 +23,13 @@ function Profile() {
 
 
          // Fetch user details
-         const userResponse = await axios.get(`http://localhost:3000/users/getprofile?email=${userEmail}`);
+         const userResponse = await axios.get(`https://backend-twocups.onrender.com/users/getprofile?email=${userEmail}`);
          console.log('User Details Response:', userResponse.data);
          setUserDetails(userResponse.data);
    
          if (userResponse.data && userResponse.data._id) {
            // Fetch orders for the user
-           const ordersResponse = await axios.get(`http://localhost:3000/order/getOrder?userId=${userResponse.data._id}`, {
+           const ordersResponse = await axios.get(`https://backend-twocups.onrender.com/order/getOrder?userId=${userResponse.data._id}`, {
              headers: {
                Authorization: `Bearer ${sessionStorage.getItem('token')}`, // Add auth header if needed
              },

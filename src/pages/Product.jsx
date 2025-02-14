@@ -14,7 +14,7 @@ const [product, setProduct] = useState([]);
 useEffect(()=>{ 
     const fetchdata = async ()=>{ 
       try {
-        const response = await axios.get(`http://localhost:3000/product/getproduct?categoryId=${id}`);
+        const response = await axios.get(`https://backend-twocups.onrender.com/product/getproduct?categoryId=${id}`);
         setProduct(response.data);
       
       } catch (error) {
@@ -27,14 +27,17 @@ useEffect(()=>{
 
   return (
     <>
+    <div className='flex flex-wrap gap-2.5 justify-center'>
     {
       product.length > 0 && (
         product.map(data =>{ 
+
         return  <ProductCard key={data._id} {...data}/>
           
         })
       )
     }
+    </div>
 
     </>
   )

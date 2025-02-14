@@ -14,7 +14,7 @@ function ProductCard(props) {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-2 my-3">
-      <img src={`http://localhost:3000/${imageUrl}`} alt={name} className="w-full h-48 object-cover" />
+      <img src={`https://backend-twocups.onrender.com/${imageUrl}`} alt={name} className="w-full h-48 object-cover" />
       <div className="p-4">
         <h3 className="text-lg font-semibold">{name}</h3>
         <p className="text-gray-600 mt-1">{description}</p>

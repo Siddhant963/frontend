@@ -20,7 +20,7 @@ function Navbar() {
   const Logout = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get('http://localhost:3000/users/logout');
+      const response = await axios.get('https://backend-twocups.onrender.com/users/logout');
       // console.log(response.data);
       Cookies.remove('token');
       navigate('/login');
@@ -45,10 +45,7 @@ function Navbar() {
               <Link to="/" className="hover:text-amber-200">
                 Home
               </Link>
-              <Link to="/track-order" onClick={handleLinkClick} className="hover:text-amber-200 flex items-center space-x-1">
-                <Search size={18} />
-                <span>Track Order</span>
-              </Link>
+             
               <Link to="/cart" onClick={handleLinkClick} className="relative hover:text-amber-200">
                 <ShoppingCart className="h-6 w-6" />
                 {cartCount > 0 && (
@@ -88,9 +85,6 @@ function Navbar() {
                 Home
               </Link>
               
-              <Link to="/track-order" onClick={handleLinkClick} className="block px-4 py-2 text-sm text-white hover:bg-amber-900 hover:text-amber-200">
-                Track Order
-              </Link>
               <Link to="/cart" onClick={handleLinkClick} className="relative block px-4 py-2 text-sm text-white hover:bg-amber-900 hover:text-amber-200">
                 <ShoppingCart className="h-6 w-6 inline" />
                 {cartCount > 0 && (

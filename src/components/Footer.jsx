@@ -15,7 +15,7 @@ export default function Footer() {
               </a>
               <a href="mailto:info@chaitapri.com" className="flex items-center space-x-2 hover:text-amber-200">
                 <Mail size={18} />
-                <span>info@chaitapri.com</span>
+                <span>Twocupscafe.com</span>
               </a>
             </div>
           </div>
@@ -38,12 +38,12 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Opening Hours</h3>
             <p>Monday - Sunday</p>
-            <p>6:00 AM - 10:00 PM</p>
+            <p>9:00 AM - 10:00 PM</p>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-amber-800 text-center">
-          <p>&copy; {new Date().getFullYear()} Chai Tapri. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()}Two Cups. All rights reserved.</p>
         </div>
       </div>
     </footer>

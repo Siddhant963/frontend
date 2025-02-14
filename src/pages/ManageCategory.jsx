@@ -10,7 +10,7 @@ const ManageCategory = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/category/findallcategory');
+        const response = await axios.get('https://backend-twocups.onrender.com/category/findallcategory');
         setCategories(response.data);
         setLoading(false);
       } catch (err) {
@@ -25,7 +25,7 @@ const ManageCategory = () => {
   // Delete a category
   const handleDelete = async (categoryId) => {
     try {
-      await axios.get(`http://localhost:3000/category/deletecategory?id=${categoryId}`);
+      await axios.get(`https://backend-twocups.onrender.com/category/deletecategory?id=${categoryId}`);
       // Remove the deleted category from the state
       setCategories(categories.filter((category) => category._id !== categoryId));
     } catch (err) {
@@ -51,7 +51,7 @@ const ManageCategory = () => {
               <div>
                 <h2 className="text-xl font-semibold">{category.name}</h2>
                 <p className="text-gray-600">{category.description}</p>
-                <img src={"http://localhost:3000/"+category.imageUrl} alt={category.name} className="w-32 h-32 object-cover mt-2" />
+                <img src={"https://backend-twocups.onrender.com/"+category.imageUrl} alt={category.name} className="w-32 h-32 object-cover mt-2" />
                 <p className="text-sm text-gray-500">
                   Created At: {new Date(category.createdAt).toLocaleDateString()}
                 </p>

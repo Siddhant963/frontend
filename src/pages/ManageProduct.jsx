@@ -10,7 +10,7 @@ const ManageProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/product/getallproduct');
+        const response = await axios.get('https://backend-twocups.onrender.com/product/getallproduct');
         setProducts(response.data);
         setLoading(false);
       } catch (err) {
@@ -25,7 +25,7 @@ const ManageProduct = () => {
   // Delete a product
   const handleDelete = async (productId) => {
     try {
-    const res =   await axios.get(`http://localhost:3000/product/deleteproduct?id=${productId}`);
+    const res =   await axios.get(`https://backend-twocups.onrender.com/product/deleteproduct?id=${productId}`);
     console.log(res.data);
       // Remove the deleted product from the state
       setProducts(products.filter((product) => product._id !== productId));
@@ -52,7 +52,7 @@ const ManageProduct = () => {
               <div>
                 <h2 className="text-xl font-semibold">{product.name}</h2>
                 <p className="text-gray-600">{product.description}</p>
-                <img src={"http://localhost:3000/"+product.imageUrl} alt={product.name} className="w-32 h-32 object-cover mt-2" />
+                <img src={"https://backend-twocups.onrender.com/"+product.imageUrl} alt={product.name} className="w-32 h-32 object-cover mt-2" />
                 <p className="text-sm text-gray-500">
                   Price: ₹{product.price.toFixed(2)}
                 </p>

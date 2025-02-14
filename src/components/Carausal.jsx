@@ -7,7 +7,7 @@ const slides = [
     title: "Masala Chai"
   },
   {
-    url: "https://images.unsplash.com/photo-1567929569456-c5c0623c3b08?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
+    url: "https://media.istockphoto.com/id/980106992/photo/samosa-snack-served-with-tomato-ketchup-and-mint-chutney.webp?a=1&b=1&s=612x612&w=0&k=20&c=kLqY6RY-uvHPdGqExrUzas9n4V6GOgoa3XY7ApquWmM=",
     title: "Fresh Samosas"
   },
   {
@@ -38,7 +38,7 @@ export default function Carousel() {
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full bg-center bg-cover duration-500"
       >
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+        <div className="absolute inset-0  bg-opacity-40 flex items-center justify-center">
           <h2 className="text-white text-4xl font-bold">{slides[currentIndex].title}</h2>
         </div>
       </div>

@@ -14,7 +14,7 @@ const AddProduct = () => {
   useEffect(() => {
     // Fetch categories from API
     axios
-      .get("http://localhost:3000/category/findallcategory") // Replace with your actual API endpoint
+      .get("https://backend-twocups.onrender.com/category/findallcategory") // Replace with your actual API endpoint
       .then((response) => {
         // Extract only the `_id` from category data
         const categoryData = response.data.map((category) => ({
@@ -47,7 +47,7 @@ const AddProduct = () => {
     formDataObj.append("imageUrl", formData.image);
 
     try {
-      const response = await axios.post("http://localhost:3000/product/addproduct", formDataObj, {
+      const response = await axios.post("https://backend-twocups.onrender.com/product/addproduct", formDataObj, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

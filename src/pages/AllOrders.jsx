@@ -10,7 +10,7 @@ const AllOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/order/getallorders');
+        const response = await axios.get('https://backend-twocups.onrender.com/order/getallorders');
         setOrders(response.data);
         setLoading(false);
       } catch (err) {
@@ -25,7 +25,7 @@ const AllOrders = () => {
   // Update order status
   const updateOrderStatus = async (orderId, status) => {
     try {
-      const res = await axios.get(`http://localhost:3000/order/updateorder?orderId=${orderId}&status=${status}`);
+      const res = await axios.get(`https://backend-twocups.onrender.com/order/updateorder?orderId=${orderId}&status=${status}`);
       // console.log( res.data);
       
       // Update the order status in the state

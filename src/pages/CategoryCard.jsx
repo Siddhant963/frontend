@@ -6,7 +6,7 @@ function CategoryCard() {
      const [cats, setCats] = React.useState([]);
 
      React.useEffect(() => {
-        axios.get('http://localhost:3000/category/findallcategory')
+        axios.get('https://backend-twocups.onrender.com/category/findallcategory')
         .then(response => {
           setCats(response.data);
         })

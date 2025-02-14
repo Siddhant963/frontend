@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/users/register', {
+      const response = await axios.post('https://backend-twocups.onrender.com/users/register', {
         name,
         email,
         password,

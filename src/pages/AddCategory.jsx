@@ -22,7 +22,7 @@ const AddCategory = () => {
     formData.append('imageUrl', image);
 
     try {
-      const response = await axios.post('http://localhost:3000/category/addcategory', formData, {
+      const response = await axios.post('https://backend-twocups.onrender.com/category/addcategory', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

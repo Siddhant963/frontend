@@ -25,7 +25,7 @@ function Checkout() {
 
     const getUser = async () => {
         try {
-            let response = await axios.get(`http://localhost:3000/users/getprofile?email=${Email}`);
+            let response = await axios.get(`https://backend-twocups.onrender.com/users/getprofile?email=${Email}`);
             setCustomerData(response.data);
         } catch (error) {
             console.error(error);
@@ -55,7 +55,7 @@ function Checkout() {
         console.log(order);
 
         try {
-            const orders = await axios.post(`http://localhost:3000/order/addorder?`, order);
+            const orders = await axios.post(`https://backend-twocups.onrender.com/order/addorder?`, order);
             handleOrderComplete();
             localStorage.setItem('order', JSON.stringify(finalorder));
             navigate('/order-summary');

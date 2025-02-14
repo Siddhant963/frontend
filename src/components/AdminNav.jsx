@@ -15,7 +15,7 @@ function AdminNav() {
   const Logout = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get('http://localhost:3000/users/logout'); // Added protocol
+      const response = await axios.get('https://backend-twocups.onrender.com/users/logout'); // Added protocol
       // console.log(response.data);
       Cookies.remove('token'); // Remove the token cookie
       navigate('/login'); // Redirect to the login page

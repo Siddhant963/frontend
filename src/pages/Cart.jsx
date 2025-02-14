@@ -33,7 +33,7 @@ function Cart() {
           {cartItems.map((item) => (
             <div key={item._id} className="flex flex-col sm:flex-row items-start sm:items-center py-4 border-b">
               <div className="flex items-center w-full sm:w-auto mb-4 sm:mb-0">
-                <img src={`http://localhost:3000/${item.imageUrl}`} alt={item.name} className="w-16 h-16 object-cover rounded" />
+                <img src={`https://backend-twocups.onrender.com/${item.imageUrl}`} alt={item.name} className="w-16 h-16 object-cover rounded" />
                 <div className="ml-4 flex-1">
                   <h3 className="font-semibold text-gray-800">{item.name}</h3>
                   <p className="text-amber-800">₹{(item.price && !isNaN(item.price)) ? item.price.toFixed(2) : '0.00'}</p>

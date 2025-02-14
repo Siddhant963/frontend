@@ -12,7 +12,7 @@ function Login() {
   // Function to verify token and set session values
   const tokenverify = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/users/verifytoken', {
+      const response = await axios.get('https://backend-twocups.onrender.com/users/verifytoken', {
         withCredentials: true, // Ensure cookies are sent
       });
 
@@ -30,7 +30,7 @@ function Login() {
 
     try {
       // Login request
-      const response = await axios.post('http://localhost:3000/users/login', {
+      const response = await axios.post('https://backend-twocups.onrender.com/users/login', {
         email,
         password,
       });
@@ -40,7 +40,7 @@ function Login() {
       // Set token in cookies
       Cookies.set('token', response.data.token, { expires: 1 });
       if(response.data.isadmin){ 
-        navigate('/admin');
+        navigate('/admin/allorders');
       }
      else{
        // Verify token and set session values
@@ -105,6 +105,12 @@ function Login() {
           >
             Sign in
           </button>
+          <div className="flex justify-center mt-6">
+            <a href="/register" className="text-sm text-amber-500">
+              Create a new acount 
+            </a>
+            </div>
+    
         </form>
       </div>
     </div>
