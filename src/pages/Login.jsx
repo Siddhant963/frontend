@@ -12,7 +12,7 @@ function Login() {
   // Function to verify token and set session values
   const tokenverify = async (token) => {
     try {
-      const response = await axios.get('https://backend-twocups.onrender.com/users/verifytoken', {
+      const response = await axios.post('https://backend-twocups.onrender.com/users/verifytoken', {
         token : token ,
         withCredentials: true, // Ensure cookies are sent
       });
