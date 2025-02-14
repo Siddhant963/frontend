@@ -35,7 +35,7 @@ function Login() {
         password,
       });
 
-      // console.log(response.data);
+      console.log(response.data);
       
       // Set token in cookies
       Cookies.set('token', response.data.token, { expires: 1 });
