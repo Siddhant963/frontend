@@ -51,7 +51,7 @@ function Login() {
         sessionStorage.setItem('email', response.data.email);
 
        // Redirect to home page
-      // navigate('/');
+      navigate('/');
      }
     } catch (err) {
       console.error(err);
