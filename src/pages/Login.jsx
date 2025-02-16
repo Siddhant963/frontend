@@ -46,8 +46,8 @@ function Login() {
       }
      else{
        // Verify token and set session values
-       console.log(response.data._id , response.data.email);
-      sessionStorage.setItem('userId', response.data._id);
+       console.log(response.data.userID , response.data.email);
+      sessionStorage.setItem('userId', response.data.userID);
         sessionStorage.setItem('email', response.data.email);
 
        // Redirect to home page
