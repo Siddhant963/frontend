@@ -46,12 +46,12 @@ function Login() {
       }
      else{
        // Verify token and set session values
-      console.log(Cookies.get('token'));
-       const token = Cookies.get('token');
-       await tokenverify(token);
+       console.log(response.data._id , response.data.email);
+      sessionStorage.setItem('userId', response.data._id);
+        sessionStorage.setItem('email', response.data.email);
 
        // Redirect to home page
-       navigate('/');
+      // navigate('/');
      }
     } catch (err) {
       console.error(err);
