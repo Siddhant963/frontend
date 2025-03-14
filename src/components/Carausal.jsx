@@ -33,36 +33,36 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="relative h-[500px] w-full">
+    <div className="relative w-full h-screen overflow-hidden">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full bg-center bg-cover duration-500"
+        className="w-full h-full bg-center bg-cover object-cover duration-500"
       >
-        <div className="absolute inset-0  bg-opacity-40 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h2 className="text-white text-4xl font-bold">{slides[currentIndex].title}</h2>
         </div>
       </div>
-      
+
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full hover:bg-black/50"
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/60"
       >
-        <ChevronLeft size={24} />
-      </button>
-      
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full hover:bg-black/50"
-      >
-        <ChevronRight size={24} />
+        <ChevronLeft size={30} />
       </button>
 
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black/60"
+      >
+        <ChevronRight size={30} />
+      </button>
+
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-white' : 'bg-white/50'}`}
+            className={`w-4 h-4 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-white scale-110' : 'bg-gray-400'}`}
           />
         ))}
       </div>
